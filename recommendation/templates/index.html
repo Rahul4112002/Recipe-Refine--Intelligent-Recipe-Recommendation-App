@@ -22,16 +22,15 @@
                 <!-- logo - end -->
                 <!-- nav - start -->
                 <nav class="hidden gap-20 lg:flex mr-16">
-                  <a href="#" class="text-lg font-semibold text-yellow-600 transition duration-100 hover:text-amber-300 active:text-indigo-700">Home</a>
-                  <a href="#" class="text-lg font-semibold text-yellow-600  transition duration-100 hover:text-amber-300 active:text-indigo-700">About</a>
-                  <a href="#features" class="text-lg font-semibold text-yellow-600  transition duration-100 hover:text-amber-300 active:text-indigo-700">Features</a>
-                  <a href="#contact" class="text-lg font-semibold text-yellow-600  transition duration-100 hover:text-amber-300 active:text-indigo-700">Contact</a>
+                  <a href="#" class="nav-link text-lg font-semibold text-yellow-600 transition duration-100 hover:text-amber-300 active:text-indigo-700">Home</a>
+                  <a href="#" class="nav-link text-lg font-semibold text-yellow-600 transition duration-100 hover:text-amber-300 active:text-indigo-700">About</a>
+                  <a href="#features" class="nav-link text-lg font-semibold text-yellow-600 transition duration-100 hover:text-amber-300 active:text-indigo-700">Features</a>
+                  <a href="#contact" class="nav-link text-lg font-semibold text-yellow-600 transition duration-100 hover:text-amber-300 active:text-indigo-700">Contact</a>
                 </nav>
                 <!-- nav - end -->
         
           </header>
           <!--Navbaar end-->
-
         
           <!--Hero section start-->
           <section class="ml-24 mt-10 mr-12 flex flex-col justify-between gap-4 sm:gap-10 md:gap-16 lg:flex-row">
@@ -44,9 +43,9 @@
                   <p class="mb-8 leading-relaxed text-amber-700 font-mono md:mb-12 lg:w-5/5 xl:text-lg">Revolutionize your cooking experience with Recipe Refine, the ultimate tool for discovering recipes tailored to your unique nutritional needs. Whether you're looking to manage your dietary intake or simply want to explore new flavors, our platform empowers you to create meals that fit your lifestyle.</p>
           
                   <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-                    <a href="#recommendation" class="inline-block rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-orange-700 focus-visible:ring active:bg-indigo-700 md:text-base">Start now</a>
+                    <a href="#recommendation" class="nav-link inline-block rounded-lg bg-orange-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-orange-700 focus-visible:ring active:bg-indigo-700 md:text-base">Start now</a>
           
-                    <a href="#features" class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Take tour</a>
+                    <a href="#features" class="nav-link inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Take tour</a>
                   </div>
                 </div>
                 <!-- content - end -->
@@ -66,8 +65,9 @@
             <h2 class="mt-4 mb-4 font-mono text-center text-2xl font-bold text-amber-400 md:mb-6 lg:text-5xl">Tailored Recipe Suggestions</h2>
             <p class="mx-auto max-w-screen-md text-center text-amber-700 md:text-lg">This Recipe Recommendation System is designed to suggest personalized recipe ideas based on user preferences, dietary restrictions, and available ingredients.</p>
           </div>
-
-          <form  class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2" method="post" action="{% url 'home' %}">
+        
+        
+          <form  class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2" method="post" action="{% url 'home' %}#recommended">
             {% csrf_token %}
             <!--1st row-->
             <div>
@@ -121,7 +121,7 @@
 
           <!--Recommender section start-->
           {% if recommendations %}
-            <br><br><hr class="ml-10 mr-12"><br><br>
+            <br><br><hr id="recommended" class="ml-10 mr-12"><br><br>
             <div class="mb-10 md:mb-16">
                         <h2 class="font-mono mb-4 text-center text-2xl font-bold text-amber-400 md:mb-6 lg:text-5xl">Recommended Recipes</h2>
                         <p class="mx-auto max-w-screen-md text-center text-orange-600 md:text-lg">
